@@ -1,0 +1,66 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "nombre",
+        "dbType": "string, 100",
+        "htmlType": "text",
+        "validations": "required|min:3|max:100",
+        "searchable": true
+    },
+    {
+        "name": "area",
+        "dbType": "string, 50",
+        "htmlType": "select,Humanidades,Tecnico",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "tiempo",
+        "dbType": "integer",
+        "htmlType": "number",
+        "validations": "required",
+        "searchable": false
+    },
+    {
+        "name": "ruta",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+
+
+
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

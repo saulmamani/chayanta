@@ -27,6 +27,7 @@ class Carrera extends Model
 
     public $fillable = [
         'nombre',
+        'descripcion',
         'area',
         'tiempo',
         'ruta'
@@ -39,6 +40,7 @@ class Carrera extends Model
      */
     protected $casts = [
         'nombre' => 'string',
+        'descripcion' => 'string',
         'area' => 'string',
         'tiempo' => 'integer',
         'ruta' => 'string'
@@ -51,8 +53,10 @@ class Carrera extends Model
      */
     public static $rules = [
         'nombre' => 'required|min:3|max:100',
+        'descripcion' => 'required|min:3',
         'area' => 'required',
-        'tiempo' => 'required'
+        'tiempo' => 'required',
+        //'ruta' => 'required'
     ];
 
     

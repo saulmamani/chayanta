@@ -1,7 +1,13 @@
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::label('nombre', 'Nombre de la Carrera:') !!}
     {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Descripcion Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('descripcion', 'Descripcion:') !!}
+    {!! Form::textarea('descripcion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Area Field -->
@@ -12,14 +18,15 @@
 
 <!-- Tiempo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tiempo', 'Tiempo:') !!}
+    {!! Form::label('tiempo', 'Tiempo: (Años)') !!}
     {!! Form::number('tiempo', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Ruta Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ruta', 'Ruta:') !!}
-    {!! Form::text('ruta', null, ['class' => 'form-control']) !!}
+    {!! Form::label('rutaPdf', 'Plan de estudios: (*.pdf)') !!}
+    {!! Form::file('rutaPdf', null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Submit Field -->

@@ -42,6 +42,11 @@ return [
     */
 
     'disks' => [
+        //carpeta para los planes de estudio
+        'planesPdf' => [
+            'driver' => 'local',
+            'root' => public_path('planes'),
+        ],
 
         'local' => [
             'driver' => 'local',

@@ -1,17 +1,19 @@
 <table class="table table-responsive" id="carreras-table">
     <thead>
         <tr>
-            <th>Nombre</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
         <th>Area</th>
         <th>Tiempo</th>
         <th>Ruta</th>
-            <th colspan="3">Action</th>
+        <th colspan="3">Action</th>
         </tr>
     </thead>
     <tbody>
     @foreach($carreras as $carrera)
         <tr>
             <td>{!! $carrera->nombre !!}</td>
+            <td>{!! $carrera->descripcion !!}</td>
             <td>{!! $carrera->area !!}</td>
             <td>{!! $carrera->tiempo !!}</td>
             <td>{!! $carrera->ruta !!}</td>

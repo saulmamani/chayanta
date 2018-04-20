@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Storage;
 
 class CarreraController extends AppBaseController
 {
@@ -55,7 +56,17 @@ class CarreraController extends AppBaseController
      */
     public function store(CreateCarreraRequest $request)
     {
+        //subir planes de estudio
+        $img = $request->file('rutaPdf');
+        ///dd($img);
+        
+        $nombreArchivo = time().'_'.$img->getClientOriginalName();
+        Storage::disk('planesPdf')->put($nombreArchivo, 
+            file_get_contents( $img->getRealPath() ) );
+
+
         $input = $request->all();
+        $input += ['ruta' => $nombreArchivo];
 
         $carrera = $this->carreraRepository->create($input);
 
@@ -122,7 +133,24 @@ class CarreraController extends AppBaseController
             return redirect(route('carreras.index'));
         }
 
-        $carrera = $this->carreraRepository->update($request->all(), $id);
+        $datos = $request->all();
+        //modificando archivo plan de estudios
+        if (! isset($datos['ruta']))
+        {
+           //cargando archivo al servidor
+            $img = $request->file('rutaPdf');
+            $nombreArchivo = time().'_'.$img->getClientOriginalName();
+            Storage::disk('planesPdf')->put($nombreArchivo, 
+                file_get_contents( $img->getRealPath() ) );
+            
+            $datos['ruta'] = $nombreArchivo;
+        }
+        else
+        {
+            $datos['ruta'] = $carrera->ruta;
+        }
+
+        $carrera = $this->carreraRepository->update($datos, $id);
 
         Flash::success('Carrera updated successfully.');
 

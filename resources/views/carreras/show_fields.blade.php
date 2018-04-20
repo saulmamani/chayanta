@@ -12,6 +12,12 @@
 
 <!-- Area Field -->
 <div class="form-group">
+    {!! Form::label('descripcion', 'Descripcion:') !!}
+    <p>{!! $carrera->descripcion !!}</p>
+</div>
+
+<!-- Area Field -->
+<div class="form-group">
     {!! Form::label('area', 'Area:') !!}
     <p>{!! $carrera->area !!}</p>
 </div>
@@ -24,19 +30,8 @@
 
 <!-- Ruta Field -->
 <div class="form-group">
-    {!! Form::label('ruta', 'Ruta:') !!}
-    <p>{!! $carrera->ruta !!}</p>
+    <a href="{{ '/planes/'.$carrera->ruta }}" class="btn btn-success">Descargar Plan de Estudios</a>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $carrera->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $carrera->updated_at !!}</p>
-</div>
+<hr>
 

@@ -12,7 +12,7 @@
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'carreras.store']) !!}
+                    {!! Form::open(['route' => 'carreras.store',  'enctype'=>'multipart/form-data']) !!}
 
                         @include('carreras.fields')
 

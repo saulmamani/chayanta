@@ -21,3 +21,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('carreras', 'CarreraController');
+
+Route::resource('comunicados', 'ComunicadoController');

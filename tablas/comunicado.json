@@ -11,33 +11,37 @@
         "inIndex": false
     },
     {
-        "name": "nombre",
+        "name": "fecha",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "titulo",
         "dbType": "string, 100",
         "htmlType": "text",
         "validations": "required|min:3|max:100",
         "searchable": true
     },
     {
-        "name": "area",
-        "dbType": "string, 50",
-        "htmlType": "select,Humanidades,Tecnico",
-        "validations": "required",
+        "name": "contenido",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required|min:5",
         "searchable": true
     },
+
     {
-        "name": "tiempo",
-        "dbType": "integer",
-        "htmlType": "number",
+        "name": "estado",
+        "dbType": "string, 5",
+        "htmlType": "radio,Alta,Baja",
         "validations": "required",
         "searchable": false
     },
-    {
-        "name": "ruta",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "",
-        "searchable": false
-    },
+
+
+
 
     {
         "name": "created_at",

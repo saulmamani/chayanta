@@ -30,7 +30,7 @@
 
 <!-- Ruta Field -->
 <div class="form-group">
-    <a href="{{ '/planes/'.$carrera->ruta }}" class="btn btn-success">Descargar Plan de Estudios</a>
+    <a target="_blank" href="{{ '/planes/'.$carrera->ruta }}" class="btn btn-success">Descargar Plan de Estudios</a>
 </div>
 
 <hr>

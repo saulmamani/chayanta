@@ -135,7 +135,7 @@ class CarreraController extends AppBaseController
 
         $datos = $request->all();
         //modificando archivo plan de estudios
-        if (! isset($datos['ruta']))
+        if (isset($datos['rutaPdf']))
         {
            //cargando archivo al servidor
             $img = $request->file('rutaPdf');

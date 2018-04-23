@@ -22,18 +22,15 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('carreras', 'CarreraController');
 
-Route::resource('comunicados', 'ComunicadoController');
-
 Route::resource('facilitadors', 'FacilitadorController');
 
 Route::resource('estudiantes', 'EstudianteController');
 
 Route::resource('comunicados', 'ComunicadoController');
 
-Route::resource('comunicados', 'ComunicadoController');
-
-Route::resource('comunicados', 'ComunicadoController');
 
 Route::resource('documentoInstitucionals', 'DocumentoInstitucionalController');
 
 Route::resource('documentoBibliograficos', 'DocumentoBibliograficoController');
+
+Route::resource('users','UserController');

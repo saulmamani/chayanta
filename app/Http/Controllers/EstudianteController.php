@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Carrera;
+use App\User;
+use App\Http\Controllers\Fachada;
 
 class EstudianteController extends AppBaseController
 {
@@ -71,6 +73,9 @@ class EstudianteController extends AppBaseController
         $input = $request->all();
 
         $estudiante = $this->estudianteRepository->create($input);
+
+        //registrando en la tabla usuarios
+        Fachada::crearEstudiante($input);
 
         Flash::success('Estudiante saved successfully.');
 
@@ -161,6 +166,10 @@ class EstudianteController extends AppBaseController
         }
 
         $this->estudianteRepository->delete($id);
+
+         //eliminando al usuario
+        Fachada::eliminarUsuario($estudiante->codigoRUDE);
+
 
         Flash::success('Estudiante deleted successfully.');
 

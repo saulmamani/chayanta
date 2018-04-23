@@ -14,9 +14,8 @@
                 <p>Chayanta</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
+                    <p>{{ Auth::user()->rol}}</p>
                 @endif
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
 

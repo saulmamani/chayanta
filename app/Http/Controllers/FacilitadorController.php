@@ -11,6 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Carrera;
+use App\Http\Controllers\Fachada;
 
 class FacilitadorController extends AppBaseController
 {
@@ -72,6 +73,9 @@ class FacilitadorController extends AppBaseController
         $input = $request->all();
 
         $facilitador = $this->facilitadorRepository->create($input);
+
+        //registrando en la tabla usuarios
+        Fachada::crearFacilitador($input);
 
         Flash::success('Facilitador saved successfully.');
 
@@ -162,6 +166,9 @@ class FacilitadorController extends AppBaseController
         }
 
         $this->facilitadorRepository->delete($id);
+
+        //eliminando al usuario
+        Fachada::eliminarUsuario('rda'.$facilitador->codigoRDA);
 
         Flash::success('Facilitador deleted successfully.');
 

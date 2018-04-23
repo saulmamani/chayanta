@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Validator;
 /**
  * Class Facilitador
  * @package App\Models
@@ -78,7 +78,6 @@ class Facilitador extends Model
      * @var array
      */
     public static $rules = [
-        'codigoRDA' => 'required',
         'ci' => 'required|min:7|max:15',
         'expedido' => 'required',
         'nombre' => 'required|min:3|max:20',

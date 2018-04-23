@@ -31,7 +31,7 @@ class UserController extends Controller
         return view('users.create');
     }
 
-     public function validar(Request $request)
+    public function validar(Request $request)
     {
         $this->validate($request, 
             [

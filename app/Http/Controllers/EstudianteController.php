@@ -61,6 +61,15 @@ class EstudianteController extends AppBaseController
         return view('estudiantes.create')->with('carreras',$carrerasArray);
     }
 
+
+    private function validar(Request $request, $esNuevo)
+    {
+        $regla = ($esNuevo === TRUE)?'required|unique:estudiantes':'required';
+        $this->validate($request, [
+            'codigoRUDE' => $regla,
+        ]);
+    }
+
     /**
      * Store a newly created Estudiante in storage.
      *
@@ -70,8 +79,10 @@ class EstudianteController extends AppBaseController
      */
     public function store(CreateEstudianteRequest $request)
     {
-        $input = $request->all();
+        $this->validar($request, TRUE);
 
+        $input = $request->all();
+        
         $estudiante = $this->estudianteRepository->create($input);
 
         //registrando en la tabla usuarios
@@ -113,6 +124,7 @@ class EstudianteController extends AppBaseController
     public function edit($id)
     {
         $estudiante = $this->estudianteRepository->findWithoutFail($id);
+        $carrerasArray = $this->listaCarreras();
 
         if (empty($estudiante)) {
             Flash::error('Estudiante not found');
@@ -120,7 +132,7 @@ class EstudianteController extends AppBaseController
             return redirect(route('estudiantes.index'));
         }
 
-        return view('estudiantes.edit')->with('estudiante', $estudiante);
+        return view('estudiantes.edit')->with(['estudiante'=> $estudiante, 'carreras'=>$carrerasArray]);
     }
 
     /**
@@ -140,6 +152,8 @@ class EstudianteController extends AppBaseController
 
             return redirect(route('estudiantes.index'));
         }
+
+        $this->validar($request, FALSE);
 
         $estudiante = $this->estudianteRepository->update($request->all(), $id);
 

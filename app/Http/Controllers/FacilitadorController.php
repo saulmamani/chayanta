@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Carrera;
 use App\Http\Controllers\Fachada;
+use Illuminate\Validation\Rule;
 
 class FacilitadorController extends AppBaseController
 {
@@ -61,6 +62,14 @@ class FacilitadorController extends AppBaseController
         return view('facilitadors.create')->with('carreras', $carrerasArray);
     }
 
+    private function validar(Request $request, $esNuevo)
+    {
+        $regla = ($esNuevo === TRUE)?'required|unique:facilitadors':'required';
+        $this->validate($request, [
+            'codigoRDA' => $regla,
+        ]);
+    }
+
     /**
      * Store a newly created Facilitador in storage.
      *
@@ -70,12 +79,16 @@ class FacilitadorController extends AppBaseController
      */
     public function store(CreateFacilitadorRequest $request)
     {
+
+        $this->validar($request, TRUE);
+
         $input = $request->all();
 
         $facilitador = $this->facilitadorRepository->create($input);
 
         //registrando en la tabla usuarios
         Fachada::crearFacilitador($input);
+
 
         Flash::success('Facilitador saved successfully.');
 
@@ -140,6 +153,8 @@ class FacilitadorController extends AppBaseController
 
             return redirect(route('facilitadors.index'));
         }
+        
+        $this->validar($request, FALSE);
 
         $facilitador = $this->facilitadorRepository->update($request->all(), $id);
 

@@ -78,7 +78,6 @@ class Estudiante extends Model
      * @var array
      */
     public static $rules = [
-        'codigoRUDE' => 'required',
         'ci' => 'required|min:7|max:15',
         'expedido' => 'required',
         'nombre' => 'required|min:3|max:20',

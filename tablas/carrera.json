@@ -18,6 +18,13 @@
         "searchable": true
     },
     {
+        "name": "descripcion",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required|min:3",
+        "searchable": true
+    },
+    {
         "name": "area",
         "dbType": "string, 50",
         "htmlType": "select,Humanidades,Tecnico",

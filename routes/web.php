@@ -25,3 +25,5 @@ Route::resource('carreras', 'CarreraController');
 Route::resource('comunicados', 'ComunicadoController');
 
 Route::resource('facilitadors', 'FacilitadorController');
+
+Route::resource('estudiantes', 'EstudianteController');

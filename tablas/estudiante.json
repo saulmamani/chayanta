@@ -15,7 +15,7 @@
         "dbType": "integer",
         "htmlType": "number",
         "validations": "required",
-        "searchable": false
+        "searchable": true
     },
     {
         "name": "ci",

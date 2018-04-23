@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Auth;
 
 class ComunicadoController extends AppBaseController
 {
@@ -30,7 +31,7 @@ class ComunicadoController extends AppBaseController
     public function index(Request $request)
     {
         $this->comunicadoRepository->pushCriteria(new RequestCriteria($request));
-        $comunicados = $this->comunicadoRepository->paginate(5);
+        $comunicados = $this->comunicadoRepository->paginate(10);
 
         return view('comunicados.index')
             ->with('comunicados', $comunicados);
@@ -56,8 +57,7 @@ class ComunicadoController extends AppBaseController
     public function store(CreateComunicadoRequest $request)
     {
         $input = $request->all();
-        $input['fecha'] = new \DateTime();
-
+        $input['users_id'] = Auth::id();
 
         $comunicado = $this->comunicadoRepository->create($input);
 

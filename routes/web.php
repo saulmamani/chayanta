@@ -27,3 +27,9 @@ Route::resource('comunicados', 'ComunicadoController');
 Route::resource('facilitadors', 'FacilitadorController');
 
 Route::resource('estudiantes', 'EstudianteController');
+
+Route::resource('comunicados', 'ComunicadoController');
+
+Route::resource('comunicados', 'ComunicadoController');
+
+Route::resource('comunicados', 'ComunicadoController');

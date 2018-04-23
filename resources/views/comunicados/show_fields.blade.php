@@ -1,9 +1,3 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $comunicado->id !!}</p>
-</div>
-
 <!-- Fecha Field -->
 <div class="form-group">
     {!! Form::label('fecha', 'Fecha:') !!}
@@ -28,15 +22,9 @@
     <p>{!! $comunicado->estado !!}</p>
 </div>
 
-<!-- Created At Field -->
+<!-- Users Id Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $comunicado->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $comunicado->updated_at !!}</p>
+    {!! Form::label('users_id', 'Usuario:') !!}
+    <p>{!! $comunicado->user->email !!}</p>
 </div>
 

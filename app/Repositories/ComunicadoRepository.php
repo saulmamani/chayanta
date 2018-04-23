@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class ComunicadoRepository
  * @package App\Repositories
- * @version April 20, 2018, 1:40 am UTC
+ * @version April 23, 2018, 2:51 pm UTC
  *
  * @method Comunicado findWithoutFail($id, $columns = ['*'])
  * @method Comunicado find($id, $columns = ['*'])

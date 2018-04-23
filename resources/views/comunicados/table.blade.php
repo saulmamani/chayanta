@@ -5,6 +5,7 @@
         <th>Titulo</th>
         <th>Contenido</th>
         <th>Estado</th>
+        <th>Usuario quien publico</th>
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -12,9 +13,10 @@
     @foreach($comunicados as $comunicado)
         <tr>
             <td>{!! $comunicado->fecha !!}</td>
-            <td>{{ $comunicado->titulo }}</td>
+            <td>{!! $comunicado->titulo !!}</td>
             <td>{!! $comunicado->contenido !!}</td>
             <td>{!! $comunicado->estado !!}</td>
+            <td>{!! $comunicado->user->email !!}</td>
             <td>
                 {!! Form::open(['route' => ['comunicados.destroy', $comunicado->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

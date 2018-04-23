@@ -19,8 +19,10 @@ class CreateComunicadosTable extends Migration
             $table->string('titulo',  100);
             $table->text('contenido');
             $table->string('estado',  5);
+            $table->integer('users_id')->unsigned()->default(0);
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 

@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function comunicados()
+    {
+        return $this->hasMany(\App\Models\Comunicado::class, 'users_id');
+    }
 }

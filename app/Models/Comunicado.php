@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Comunicado
  * @package App\Models
- * @version April 20, 2018, 1:40 am UTC
+ * @version April 23, 2018, 2:51 pm UTC
  *
+ * @property \App\Models\User user
  * @property dateTime fecha
  * @property string titulo
  * @property string contenido
  * @property string estado
+ * @property integer users_id
  */
 class Comunicado extends Model
 {
@@ -29,7 +31,8 @@ class Comunicado extends Model
         'fecha',
         'titulo',
         'contenido',
-        'estado'
+        'estado',
+        'users_id'
     ];
 
     /**
@@ -41,7 +44,8 @@ class Comunicado extends Model
         'fecha' => 'datetime',
         'titulo' => 'string',
         'contenido' => 'string',
-        'estado' => 'string'
+        'estado' => 'string',
+        'users_id' => 'integer'
     ];
 
     /**
@@ -50,10 +54,17 @@ class Comunicado extends Model
      * @var array
      */
     public static $rules = [
+        'fecha' => 'required',
         'titulo' => 'required|min:3|max:100',
         'contenido' => 'required|min:5',
         'estado' => 'required'
     ];
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class, 'users_id', 'id');
+    }
 }

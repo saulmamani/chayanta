@@ -40,8 +40,12 @@
         "searchable": false
     },
 
-
-
+    {
+        "name": "users_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "mt1,User,users_id,id"
+    },
 
     {
         "name": "created_at",

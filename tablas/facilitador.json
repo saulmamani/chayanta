@@ -1,0 +1,125 @@
+[
+	{
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "codigoRDA",
+        "dbType": "integer",
+        "htmlType": "number",
+        "validations": "required",
+        "searchable": false
+    },
+    {
+        "name": "ci",
+        "dbType": "string, 15",
+        "htmlType": "text",
+        "validations": "required|min:7|max:15",
+        "searchable": true
+    },
+    {
+        "name": "expedido",
+        "dbType": "string, 5",
+        "htmlType": "select,Pt,Or,Lp,Cb,Sc,Bn,Tj,Pa,Ch",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nombre",
+        "dbType": "string, 20",
+        "htmlType": "text",
+        "validations": "required|min:3|max:20",
+        "searchable": true
+    },
+    {
+        "name": "apellido",
+        "dbType": "string, 50",
+        "htmlType": "text",
+        "validations": "required|min:3|max:50",
+        "searchable": true
+    },
+    {
+        "name": "fechaNacimiento",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "required",
+        "searchable": false
+    },
+    {
+        "name": "lugarNacimiento",
+        "dbType": "string, 50",
+        "htmlType": "text",
+        "searchable": false
+    },
+    {
+        "name": "nacionalidad",
+        "dbType": "string, 50",
+        "htmlType": "text",
+        "searchable": false
+    },
+    {
+        "name": "estadoCivil",
+        "dbType": "string, 20",
+        "htmlType": "select,Soltero,Casado,Divorciado,Separado,Otro",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "genero",
+        "dbType": "string, 20",
+        "htmlType": "select,Varon,Mujer,Otro",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "celular",
+        "dbType": "string, 20",
+        "htmlType": "text",
+        "validations": "required|min:7|max:20",
+        "searchable": false
+    },
+    {
+        "name": "profesion",
+        "dbType": "string, 20",
+        "htmlType": "text",
+        "searchable": false
+    },
+        
+
+    {
+        "name": "carrera_id",
+        "dbType": "integer:unsigned:default,0:foreign,carreras,id",
+        "htmlType": "text",
+        "relation": "mt1,Carrera,carrera_id,id"
+    },
+
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

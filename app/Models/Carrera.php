@@ -59,5 +59,9 @@ class Carrera extends Model
         //'ruta' => 'required'
     ];
 
-    
+
+    public function facilitadores()
+    {
+        return $this->hasMany(\App\Models\Facilitador::class, 'carrera_id');
+    }
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Comunicado;
+use App\Models\Facilitador;
 
-class CreateComunicadoRequest extends FormRequest
+class UpdateFacilitadorRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreateComunicadoRequest extends FormRequest
      */
     public function rules()
     {
-        return Comunicado::$rules;
+        return Facilitador::$rules;
     }
 }

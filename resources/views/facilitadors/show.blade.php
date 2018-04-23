@@ -3,20 +3,15 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Comunicado
+            Facilitador
         </h1>
     </section>
     <div class="content">
-        @include('adminlte-templates::common.errors')
         <div class="box box-primary">
-
             <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'comunicados.store']) !!}
-
-                        @include('comunicados.fields')
-
-                    {!! Form::close() !!}
+                <div class="row" style="padding-left: 20px">
+                    @include('facilitadors.show_fields')
+                    <a href="{!! route('facilitadors.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>

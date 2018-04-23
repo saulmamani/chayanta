@@ -57,6 +57,7 @@ class ComunicadoController extends AppBaseController
     public function store(CreateComunicadoRequest $request)
     {
         $input = $request->all();
+        $input['fecha']= new \DateTime();
         $input['users_id'] = Auth::id();
 
         $comunicado = $this->comunicadoRepository->create($input);

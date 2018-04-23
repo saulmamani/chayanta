@@ -6,22 +6,23 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Comunicado
+ * Class DocumentoInstitucional
  * @package App\Models
- * @version April 23, 2018, 2:51 pm UTC
+ * @version April 23, 2018, 3:48 pm UTC
  *
  * @property \App\Models\User user
  * @property dateTime fecha
- * @property string titulo
- * @property string contenido
+ * @property string nombre
+ * @property string descripcion
+ * @property string url
  * @property string estado
  * @property integer users_id
  */
-class Comunicado extends Model
+class DocumentoInstitucional extends Model
 {
     use SoftDeletes;
 
-    public $table = 'comunicados';
+    public $table = 'documento_institucionals';
     
 
     protected $dates = ['deleted_at'];
@@ -29,8 +30,9 @@ class Comunicado extends Model
 
     public $fillable = [
         'fecha',
-        'titulo',
-        'contenido',
+        'nombre',
+        'descripcion',
+        'url',
         'estado',
         'users_id'
     ];
@@ -42,8 +44,9 @@ class Comunicado extends Model
      */
     protected $casts = [
         'fecha' => 'datetime',
-        'titulo' => 'string',
-        'contenido' => 'string',
+        'nombre' => 'string',
+        'descripcion' => 'string',
+        'url' => 'string',
         'estado' => 'string',
         'users_id' => 'integer'
     ];
@@ -54,8 +57,9 @@ class Comunicado extends Model
      * @var array
      */
     public static $rules = [
-        'titulo' => 'required|min:3|max:100',
-        'contenido' => 'required|min:5',
+        'nombre' => 'required|min:3|max:100',
+        'descripcion' => 'required|min:5',
+        'url' => 'required',
         'estado' => 'required'
     ];
 

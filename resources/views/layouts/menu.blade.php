@@ -14,3 +14,11 @@
     <a href="{!! route('estudiantes.index') !!}"><i class="fa fa-edit"></i><span>Estudiantes</span></a>
 </li>
 
+<li class="{{ Request::is('documentoInstitucionals*') ? 'active' : '' }}">
+    <a href="{!! route('documentoInstitucionals.index') !!}"><i class="fa fa-edit"></i><span>Documento Institucionals</span></a>
+</li>
+
+<li class="{{ Request::is('documentoBibliograficos*') ? 'active' : '' }}">
+    <a href="{!! route('documentoBibliograficos.index') !!}"><i class="fa fa-edit"></i><span>Documento Bibliograficos</span></a>
+</li>
+

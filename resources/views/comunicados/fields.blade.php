@@ -1,9 +1,3 @@
-<!-- Fecha Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::date('fecha', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Titulo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('titulo', 'Titulo:') !!}

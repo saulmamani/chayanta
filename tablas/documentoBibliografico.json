@@ -1,0 +1,72 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "fecha",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nombre",
+        "dbType": "string, 100",
+        "htmlType": "text",
+        "validations": "required|min:3|max:100",
+        "searchable": true
+    },
+    {
+        "name": "descripcion",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required|min:5",
+        "searchable": true
+    },
+
+    {
+        "name": "url",
+        "dbType": "string",
+        "htmlType": "url",
+        "validations": "required",
+        "searchable": false
+    },
+
+    {
+        "name": "users_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "mt1,User,users_id,id"
+    },
+
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

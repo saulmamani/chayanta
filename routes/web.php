@@ -33,3 +33,7 @@ Route::resource('comunicados', 'ComunicadoController');
 Route::resource('comunicados', 'ComunicadoController');
 
 Route::resource('comunicados', 'ComunicadoController');
+
+Route::resource('documentoInstitucionals', 'DocumentoInstitucionalController');
+
+Route::resource('documentoBibliograficos', 'DocumentoBibliograficoController');

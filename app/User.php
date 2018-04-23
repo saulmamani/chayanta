@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\Models\Comunicado::class, 'users_id');
     }
+
+    public function documentosInstitucionales()
+    {
+        return $this->hasMany(\App\Models\DocumentoInstitucional::class, 'users_id');
+    }
 }

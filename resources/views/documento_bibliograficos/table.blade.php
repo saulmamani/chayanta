@@ -16,7 +16,7 @@
             <td>{!! $documentoBibliografico->nombre !!}</td>
             <td>{!! $documentoBibliografico->descripcion !!}</td>
             <td>{!! $documentoBibliografico->user->email !!}</td>
-            <td><a class="btn-sm btn-success" target="_black" href="{{ '/materiales/'.$documentoBibliografico->url }}">Descargar</a></td>
+            <td><a id="documento" class="btn-sm btn-success" href="{{ '/materiales/'.$documentoBibliografico->url }}">Descargar</a></td>
             <td>
                 {!! Form::open(['route' => ['documentoBibliograficos.destroy', $documentoBibliografico->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

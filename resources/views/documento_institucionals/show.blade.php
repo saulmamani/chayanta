@@ -9,9 +9,15 @@
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row" style="padding-left: 20px">
+                <div class="row" style="padding: 20px">
+                    <div class="col">
                     @include('documento_institucionals.show_fields')
                     <a href="{!! route('documentoInstitucionals.index') !!}" class="btn btn-default">Back</a>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <iframe src="{{ url('/documentos/'.$documentoInstitucional->url) }}" width="100%" height="600"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

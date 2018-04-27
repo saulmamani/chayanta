@@ -9,9 +9,15 @@
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row" style="padding-left: 20px">
-                    @include('documento_bibliograficos.show_fields')
-                    <a href="{!! route('documentoBibliograficos.index') !!}" class="btn btn-default">Back</a>
+                <div class="row" style="padding: 20px">
+                    <div class="col">
+                        @include('documento_bibliograficos.show_fields')
+                        <a href="{!! route('documentoBibliograficos.index') !!}" class="btn btn-default">Back</a>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <iframe src="{{ url('/materiales/'.$documentoBibliografico->url) }}" width="100%" height="600"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

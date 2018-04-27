@@ -8,11 +8,12 @@
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
+        @include('flash::message')
         <div class="box box-primary">
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'documentoBibliograficos.store']) !!}
+                    {!! Form::open(['route' => 'documentoBibliograficos.store','enctype'=>'multipart/form-data']) !!}
 
                         @include('documento_bibliograficos.fields')
 

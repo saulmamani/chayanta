@@ -42,6 +42,19 @@ return [
     */
 
     'disks' => [
+        
+        //carpeta para los documentos
+        'documentosPdf' => [
+            'driver' => 'local',
+            'root' => public_path('documentos'),
+        ],
+
+        //carpeta para los materiales bibliograficos
+        'materialesPdf' => [
+            'driver' => 'local',
+            'root' => public_path('materiales'),
+        ],
+
         //carpeta para los planes de estudio
         'planesPdf' => [
             'driver' => 'local',

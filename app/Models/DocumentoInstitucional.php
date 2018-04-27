@@ -59,7 +59,6 @@ class DocumentoInstitucional extends Model
     public static $rules = [
         'nombre' => 'required|min:3|max:100',
         'descripcion' => 'required|min:5',
-        'url' => 'required',
         'estado' => 'required'
     ];
 

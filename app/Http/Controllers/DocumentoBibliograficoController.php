@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
+use Storage;
+
 
 class DocumentoBibliograficoController extends AppBaseController
 {
@@ -47,6 +49,23 @@ class DocumentoBibliograficoController extends AppBaseController
         return view('documento_bibliograficos.create');
     }
 
+    private function cargarArchivo(Request $request)
+    {
+        //cargando el documento
+        $pdf = $request->file('urlPdf');
+        if(is_null($pdf))
+        {
+            Flash::error('Elija un archivo .pdf o .docx valido');
+            return redirect(route('documentoBibliograficos.create'));
+        }
+        
+        $nombreArchivo = time().'_'.$pdf->getClientOriginalName();
+        Storage::disk('materialesPdf')->put($nombreArchivo, 
+             file_get_contents( $pdf->getRealPath() ) );
+
+        return $nombreArchivo;
+    }    
+
     /**
      * Store a newly created DocumentoBibliografico in storage.
      *
@@ -56,9 +75,12 @@ class DocumentoBibliograficoController extends AppBaseController
      */
     public function store(CreateDocumentoBibliograficoRequest $request)
     {
+        $nombreArchivo = $this->cargarArchivo($request);
+
         $input = $request->all();
         $input['fecha'] = new \DateTime();
         $input['users_id'] = Auth::id();
+        $input['url'] = $nombreArchivo;
 
         $documentoBibliografico = $this->documentoBibliograficoRepository->create($input);
 
@@ -125,7 +147,20 @@ class DocumentoBibliograficoController extends AppBaseController
             return redirect(route('documentoBibliograficos.index'));
         }
 
-        $documentoBibliografico = $this->documentoBibliograficoRepository->update($request->all(), $id);
+        $datos = $request->all();
+
+        //modificando archivo plan de estudios
+        if (is_null($request->file('urlPdf')))
+        {
+            $datos['url'] = $documentoBibliografico->url;   
+        }
+        else
+        {
+            $nombreArchivo = $this->cargarArchivo($request);
+            $datos['url'] = $nombreArchivo;
+        }
+
+        $documentoBibliografico = $this->documentoBibliograficoRepository->update($datos, $id);
 
         Flash::success('Documento Bibliografico updated successfully.');
 

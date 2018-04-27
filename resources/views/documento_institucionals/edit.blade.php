@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($documentoInstitucional, ['route' => ['documentoInstitucionals.update', $documentoInstitucional->id], 'method' => 'patch']) !!}
+                   {!! Form::model($documentoInstitucional, ['route' => ['documentoInstitucionals.update', $documentoInstitucional->id], 'enctype'=>'multipart/form-data', 'method' => 'patch']) !!}
 
                         @include('documento_institucionals.fields')
 

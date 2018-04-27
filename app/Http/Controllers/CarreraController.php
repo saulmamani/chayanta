@@ -57,9 +57,7 @@ class CarreraController extends AppBaseController
     public function store(CreateCarreraRequest $request)
     {
         //subir planes de estudio
-        $img = $request->file('rutaPdf');
-        ///dd($img);
-        
+        $img = $request->file('rutaPdf');        
         $nombreArchivo = time().'_'.$img->getClientOriginalName();
         Storage::disk('planesPdf')->put($nombreArchivo, 
             file_get_contents( $img->getRealPath() ) );

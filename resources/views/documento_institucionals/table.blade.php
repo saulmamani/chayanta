@@ -18,7 +18,7 @@
             <td>{!! $documentoInstitucional->descripcion !!}</td>
             <td>{!! $documentoInstitucional->estado !!}</td>
             <td>{!! $documentoInstitucional->user->email !!}</td>
-            <td><a class="btn-sm btn-success" target="_black" href="{{ $documentoInstitucional->url }}">Descargar</a></td>
+            <td><a class="btn-sm btn-success" target="_black" href="{{'/documentos/'. $documentoInstitucional->url }}">Descargar</a></td>
             <td>
                 {!! Form::open(['route' => ['documentoInstitucionals.destroy', $documentoInstitucional->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

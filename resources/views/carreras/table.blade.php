@@ -5,7 +5,7 @@
         <th>Descripcion</th>
         <th>Area</th>
         <th>Tiempo</th>
-        <th>Ruta</th>
+        <th>Plan de estudios</th>
         <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -16,7 +16,7 @@
             <td>{!! $carrera->descripcion !!}</td>
             <td>{!! $carrera->area !!}</td>
             <td>{!! $carrera->tiempo !!}</td>
-            <td>{!! $carrera->ruta !!}</td>
+            <td><a class="btn-sm btn-success" target="_black" href="{{ $carrera->ruta }}">Descargar</a></td>
             <td>
                 {!! Form::open(['route' => ['carreras.destroy', $carrera->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

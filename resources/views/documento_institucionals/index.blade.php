@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Documento Institucionals</h1>
+        <h1 class="pull-left">Documento Institucionales</h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('documentoInstitucionals.create') !!}">Add New</a>
         </h1>

@@ -12,8 +12,9 @@
 
 <!-- URL Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('url', 'URL Documento:') !!}
-    {!! Form::url('url', null, ['class' => 'form-control']) !!}
+    {!! Form::label('urlPdf', 'Cargar Documento: (*.pdf)') !!}
+    {!! Form::file('urlPdf', null, ['class' => 'form-control','required' => 'required']) !!}
+
 </div>
 
 <!-- Estado Field -->

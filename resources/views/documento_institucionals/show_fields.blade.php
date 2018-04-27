@@ -18,7 +18,7 @@
 
 <!-- Url Field -->
 <div class="form-group">
-    <p><a class="btn-lg btn-success" target="_black" href="{{ $documentoInstitucional->url }}">Descargar</a></p>
+    <p><a class="btn-lg btn-success" target="_black" href="{{ '/documentos/'.$documentoInstitucional->url }}">Descargar</a></p>
 </div>
 
 <!-- Estado Field -->

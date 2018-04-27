@@ -11,6 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
+use Storage;
 
 class DocumentoInstitucionalController extends AppBaseController
 {
@@ -49,6 +50,22 @@ class DocumentoInstitucionalController extends AppBaseController
         return view('documento_institucionals.create');
     }
 
+    private function cargarArchivo(Request $request)
+    {
+        //cargando el documento
+        $pdf = $request->file('urlPdf');
+        if(is_null($pdf))
+        {
+            Flash::error('Elija un archivo .pdf o .docx valido');
+            return redirect(route('documentoInstitucional.create'));
+        }
+        
+        $nombreArchivo = time().'_'.$pdf->getClientOriginalName();
+        Storage::disk('documentosPdf')->put($nombreArchivo, 
+             file_get_contents( $pdf->getRealPath() ) );
+
+        return $nombreArchivo;
+    } 
     /**
      * Store a newly created DocumentoInstitucional in storage.
      *
@@ -58,9 +75,12 @@ class DocumentoInstitucionalController extends AppBaseController
      */
     public function store(CreateDocumentoInstitucionalRequest $request)
     {
+        $nombreArchivo = $this->cargarArchivo($request);
+
         $input = $request->all();
         $input['fecha'] = new \DateTime();
         $input['users_id'] = Auth::id();
+        $input['url'] = $nombreArchivo;
 
         $documentoInstitucional = $this->documentoInstitucionalRepository->create($input);
 
@@ -127,7 +147,20 @@ class DocumentoInstitucionalController extends AppBaseController
             return redirect(route('documentoInstitucionals.index'));
         }
 
-        $documentoInstitucional = $this->documentoInstitucionalRepository->update($request->all(), $id);
+        $datos = $request->all();
+
+        //modificando archivo plan de estudios
+        if (is_null($request->file('urlPdf')))
+        {
+            $datos['url'] = $documentoInstitucional->url;   
+        }
+        else
+        {
+            $nombreArchivo = $this->cargarArchivo($request);
+            $datos['url'] = $nombreArchivo;
+        }
+
+        $documentoInstitucional = $this->documentoInstitucionalRepository->update($datos, $id);
 
         Flash::success('Documento Institucional updated successfully.');
 

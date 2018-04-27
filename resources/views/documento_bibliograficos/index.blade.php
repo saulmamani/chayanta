@@ -31,8 +31,7 @@
 @section('scripts')
 <script type="text/javascript">
     $(document).ready(function() {
-       // alert($("#rostro").html());
-
+        $("#documentoBibliograficos-table").DataTable();
     });
 </script>
 @endsection

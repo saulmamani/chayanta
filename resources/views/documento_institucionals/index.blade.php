@@ -26,3 +26,11 @@
     </div>
 @endsection
 
+@section('scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#documentoInstitucionals-table").DataTable();
+    });
+</script>
+@endsection
+

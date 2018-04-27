@@ -18,6 +18,8 @@
     <!-- fancibox -->
     <link rel="stylesheet" href="{!! asset('lightbox/css/lightbox.css') !!}">  
 
+    @include('layouts.datatables_css')
+
     @yield('css')
 </head>
 
@@ -109,6 +111,9 @@
 
 <!--lightbox-->
 <script type="text/javascript" src="{!! asset('lightbox/js/lightbox.js') !!}" async></script>
+
+@include('layouts.datatables_js')
+
 
 @yield('scripts')
 </body>

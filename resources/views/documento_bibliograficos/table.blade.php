@@ -6,7 +6,7 @@
         <th>Descripcion</th>
         <th>Usuario</th>
         <th>Url</th>
-            <th colspan="3">Action</th>
+        <th>Action</th>
         </tr>
     </thead>
     <tbody>

@@ -1,3 +1,4 @@
+@if(Auth::user()->rol == "Administrador" || Auth::user()->rol == "Secretaria")
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
 </li>
@@ -25,4 +26,12 @@
 <li class="{{ Request::is('documentoBibliograficos*') ? 'active' : '' }}">
     <a href="{!! route('documentoBibliograficos.index') !!}"><i class="fa fa-edit"></i><span>Materiales</span></a>
 </li>
-
+@elseif(Auth::user()->rol == "Estudiante" || Auth::user()->rol == "Administrador")
+<li class="active">
+    <a href="{!! url('/bibliograficos') !!}"><i class="fa fa-edit"></i><span>Materiales</span></a>
+</li>
+@else
+<li class="{{ Request::is('documentoBibliograficos*') ? 'active' : '' }}">
+    <a href="{!! route('documentoBibliograficos.index') !!}"><i class="fa fa-edit"></i><span>Materiales</span></a>
+</li>
+@endif

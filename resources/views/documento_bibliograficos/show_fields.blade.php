@@ -24,5 +24,5 @@
 <!-- Users Id Field -->
 <div class="form-group">
     {!! Form::label('users_id', 'Usuario:') !!}
-    <p>{!! $documentoBibliografico->user->email !!}</p>
+    <p>{!! $documentoBibliografico->facilitador->nombre . ' '. $documentoBibliografico->facilitador->apellido !!}</p>
 </div>

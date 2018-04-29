@@ -155,8 +155,15 @@ class FacilitadorController extends AppBaseController
         }
         
         $this->validar($request, FALSE);
+        
+        //eliminando al usuario
+        Fachada::eliminarUsuario('rda'.$facilitador->codigoRDA);
 
         $facilitador = $this->facilitadorRepository->update($request->all(), $id);
+
+
+        //registrando en la tabla usuarios
+        Fachada::crearFacilitador($request->all());
 
         Flash::success('Facilitador updated successfully.');
 

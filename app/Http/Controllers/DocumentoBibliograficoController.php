@@ -12,7 +12,9 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
 use Storage;
-
+use App\Models\Facilitador;
+use App\Models\DocumentoBibliografico;
+use App\Http\Controllers\Fachada;
 
 class DocumentoBibliograficoController extends AppBaseController
 {
@@ -33,10 +35,25 @@ class DocumentoBibliograficoController extends AppBaseController
     public function index(Request $request)
     {
         $this->documentoBibliograficoRepository->pushCriteria(new RequestCriteria($request));
-        $documentoBibliograficos = $this->documentoBibliograficoRepository->paginate(10);
+
+        if(Auth::user()->rol == 'Facilitador')
+            $documentoBibliograficos = DocumentoBibliografico::where('facilitadors_id', '=', $this->sacarIdFacilitador())->get();
+        else    
+            $documentoBibliograficos = $this->documentoBibliograficoRepository->all();
+
 
         return view('documento_bibliograficos.index')
             ->with('documentoBibliograficos', $documentoBibliograficos);
+    }
+
+    private function listarFacilitadores()
+    {
+        $carreras = Facilitador::select('id','nombre','apellido')->get();
+        $res = [];
+        foreach ($carreras as $fila) {
+            $res[$fila->id] = $fila->nombre.' '.$fila->apellido;
+        }
+        return $res;
     }
 
     /**
@@ -46,7 +63,8 @@ class DocumentoBibliograficoController extends AppBaseController
      */
     public function create()
     {
-        return view('documento_bibliograficos.create');
+        $facilitadoresArray = $this->listarFacilitadores();
+        return view('documento_bibliograficos.create')->with('facilitadores', $facilitadoresArray);
     }
 
     private function cargarArchivo(Request $request)
@@ -79,8 +97,9 @@ class DocumentoBibliograficoController extends AppBaseController
 
         $input = $request->all();
         $input['fecha'] = new \DateTime();
-        $input['users_id'] = Auth::id();
         $input['url'] = $nombreArchivo;
+        if(Auth::user()->rol == 'Facilitador')
+            $input['facilitadors_id'] = $this->sacarIdFacilitador();
 
         $documentoBibliografico = $this->documentoBibliograficoRepository->create($input);
 
@@ -119,6 +138,8 @@ class DocumentoBibliograficoController extends AppBaseController
     public function edit($id)
     {
         $documentoBibliografico = $this->documentoBibliograficoRepository->findWithoutFail($id);
+        $facilitadoresArray = $this->listarFacilitadores();
+
 
         if (empty($documentoBibliografico)) {
             Flash::error('Documento Bibliografico not found');
@@ -126,7 +147,13 @@ class DocumentoBibliograficoController extends AppBaseController
             return redirect(route('documentoBibliograficos.index'));
         }
 
-        return view('documento_bibliograficos.edit')->with('documentoBibliografico', $documentoBibliografico);
+        return view('documento_bibliograficos.edit')->with(['documentoBibliografico'=> $documentoBibliografico, 'facilitadores'=>$facilitadoresArray]);
+    }
+
+    private function sacarIdFacilitador()
+    {
+        $facilitador = Fachada::buscarFacilitador();
+        return $facilitador->id;
     }
 
     /**
@@ -147,20 +174,23 @@ class DocumentoBibliograficoController extends AppBaseController
             return redirect(route('documentoBibliograficos.index'));
         }
 
-        $datos = $request->all();
+        $input = $request->all();
 
         //modificando archivo plan de estudios
         if (is_null($request->file('urlPdf')))
         {
-            $datos['url'] = $documentoBibliografico->url;   
+            $input['url'] = $documentoBibliografico->url;   
         }
         else
         {
             $nombreArchivo = $this->cargarArchivo($request);
-            $datos['url'] = $nombreArchivo;
+            $input['url'] = $nombreArchivo;
         }
 
-        $documentoBibliografico = $this->documentoBibliograficoRepository->update($datos, $id);
+        if(Auth::user()->rol == 'Facilitador')
+            $input['facilitadors_id'] = $this->sacarIdFacilitador();
+
+        $documentoBibliografico = $this->documentoBibliograficoRepository->update($input, $id);
 
         Flash::success('Documento Bibliografico updated successfully.');
 

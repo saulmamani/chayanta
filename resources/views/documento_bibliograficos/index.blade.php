@@ -21,8 +21,6 @@
             </div>
         </div>
         <div class="text-center">
-        
-        @include('adminlte-templates::common.paginate', ['records' => $documentoBibliograficos])
 
         </div>
     </div>
@@ -30,8 +28,29 @@
 
 @section('scripts')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#documentoBibliograficos-table").DataTable();
-    });
+$(document).ready(function() {
+    var table = $('#documentoBibliograficos-table').DataTable({
+        "columnDefs": [
+            { "visible": false, "targets": 4 }
+        ],
+        "order": [[ 4, 'asc' ]],
+        "displayLength": 25,
+        "drawCallback": function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:'current'} ).nodes();
+            var last=null;
+ 
+            api.column(4, {page:'current'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        '<tr class="group"><td colspan="5">'+group+'</td></tr>'
+                    );
+ 
+                    last = group;
+                }
+            } );
+        }
+    } );
+});
 </script>
 @endsection

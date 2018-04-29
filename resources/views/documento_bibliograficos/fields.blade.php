@@ -10,6 +10,16 @@
     {!! Form::textarea('descripcion', null, ['class' => 'form-control']) !!}
 </div>
 
+@if(Auth::user()->rol == 'Administrador' || Auth::user()->rol == 'Secretaria')
+
+<!-- Facilitadores Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('facilitadors_id', 'Facilitador:') !!}
+    {!! Form::select('facilitadors_id', $facilitadores, null, ['class' => 'form-control']) !!}
+</div>
+
+@endif
+
 <!-- URL Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('urlPdf', 'Cargar Material Bibliografico: (*.pdf)') !!}

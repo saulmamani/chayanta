@@ -95,4 +95,9 @@ class Facilitador extends Model
     {
         return $this->belongsTo(\App\Models\Carrera::class, 'carrera_id', 'id');
     }
+
+    public function documentosInstitucionales()
+    {
+        return $this->hasMany(\App\Models\DocumentoBibliografico::class, 'facilitadors_id');
+    }
 }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\Estudiante;
+use App\Models\Facilitador;
+use Auth;
 
 class Fachada extends Controller
 {
@@ -36,5 +39,18 @@ class Fachada extends Controller
         {
             User::destroy($user->id);
         }
+    }
+
+
+    public static function buscarEstudiante()
+    {
+        $estudiante = Estudiante::where('codigoRUDE', '=', Auth::user()->email)->first();
+        return $estudiante;
+    }
+
+    public static function buscarFacilitador()
+    {
+        $facilitador = Facilitador::where('codigoRDA', '=', substr(Auth::user()->email, 3))->first();
+        return $facilitador;
     }
 }

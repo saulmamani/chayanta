@@ -155,7 +155,13 @@ class EstudianteController extends AppBaseController
 
         $this->validar($request, FALSE);
 
+        //eliminando al usuario
+        Fachada::eliminarUsuario($estudiante->codigoRUDE);
+
         $estudiante = $this->estudianteRepository->update($request->all(), $id);
+
+        //registrando en la tabla usuarios
+        Fachada::crearEstudiante($request->all());
 
         Flash::success('Estudiante updated successfully.');
 

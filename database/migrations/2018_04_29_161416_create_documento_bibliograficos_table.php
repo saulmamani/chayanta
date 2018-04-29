@@ -19,10 +19,10 @@ class CreateDocumentoBibliograficosTable extends Migration
             $table->string('nombre',  100);
             $table->text('descripcion');
             $table->string('url');
-            $table->integer('users_id')->unsigned()->default(0);
+            $table->integer('facilitadors_id')->unsigned()->default(0);
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('facilitadors_id')->references('id')->on('facilitadors');
         });
     }
 

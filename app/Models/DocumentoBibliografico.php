@@ -32,7 +32,7 @@ class DocumentoBibliografico extends Model
         'nombre',
         'descripcion',
         'url',
-        'users_id'
+        'facilitadors_id'
     ];
 
     /**
@@ -45,7 +45,7 @@ class DocumentoBibliografico extends Model
         'nombre' => 'string',
         'descripcion' => 'string',
         'url' => 'string',
-        'users_id' => 'integer'
+        'facilitadors_id' => 'integer'
     ];
 
     /**
@@ -61,8 +61,8 @@ class DocumentoBibliografico extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function user()
+    public function facilitador()
     {
-        return $this->belongsTo(\App\User::class, 'users_id', 'id');
+        return $this->belongsTo(\App\Models\Facilitador::class, 'facilitadors_id', 'id');
     }
 }

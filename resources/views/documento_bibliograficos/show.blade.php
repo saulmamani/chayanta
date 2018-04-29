@@ -12,7 +12,12 @@
                 <div class="row" style="padding: 20px">
                     <div class="col">
                         @include('documento_bibliograficos.show_fields')
+
+                        @if(Auth::user()->rol == "Estudiante")
+                        <a href="{!! url('/bibliograficos') !!}" class="btn btn-default">Back</a>
+                        @else
                         <a href="{!! route('documentoBibliograficos.index') !!}" class="btn btn-default">Back</a>
+                        @endif
                     </div>
                     <hr>
                     <div class="col">

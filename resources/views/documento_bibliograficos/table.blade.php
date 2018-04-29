@@ -1,10 +1,11 @@
 <table class="table table-responsive" id="documentoBibliograficos-table">
     <thead>
         <tr>
-        <th>Fecha</th>
+        <th align="center">Fecha</th>
         <th>Nombre del Documento</th>
         <th>Descripcion</th>
-        <th>Usuario</th>
+        <th>Facilitador</th>
+        <th>Carrera</th>
         <th>Url</th>
         <th>Action</th>
         </tr>
@@ -12,10 +13,11 @@
     <tbody>
     @foreach($documentoBibliograficos as $documentoBibliografico)
         <tr>
-            <td>{!! $documentoBibliografico->fecha !!}</td>
+            <td align="center">{!! $documentoBibliografico->fecha !!}</td>
             <td>{!! $documentoBibliografico->nombre !!}</td>
             <td>{!! $documentoBibliografico->descripcion !!}</td>
-            <td>{!! $documentoBibliografico->user->email !!}</td>
+            <td>{!! $documentoBibliografico->facilitador->nombre . ' '. $documentoBibliografico->facilitador->apellido !!}</td>
+            <td><strong>Carrera: {{ $documentoBibliografico->facilitador->carrera->nombre }}</strong></td>
             <td><a id="documento" class="btn-sm btn-success" href="{{ '/materiales/'.$documentoBibliografico->url }}">Descargar</a></td>
             <td>
                 {!! Form::open(['route' => ['documentoBibliograficos.destroy', $documentoBibliografico->id], 'method' => 'delete']) !!}

@@ -35,3 +35,5 @@ Route::resource('documentoBibliograficos', 'DocumentoBibliograficoController');
 Route::resource('users','UserController');
 
 Route::get('/bibliograficos', 'ReportesController@buscarMaterial');
+
+Route::get('/institucionales', 'ReportesController@buscarDocumentos');

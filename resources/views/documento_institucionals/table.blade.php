@@ -6,7 +6,7 @@
         <th>Descripcion</th>
         <th>Estado</th>
         <th>Usuario</th>
-        <th>Url</th>
+        <th>Documento</th>
         <th>Action</th>
         </tr>
     </thead>

@@ -19,7 +19,7 @@
         <div class="box box-primary">
             <div class="box-body">
 
-<table class="table table-responsive" id="mitabla">
+<table class="table table-responsive table-bordered" id="mitabla">
     <thead>
         <tr>
         <th align="center">Fecha</th>

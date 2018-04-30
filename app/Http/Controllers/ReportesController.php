@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DocumentoBibliografico;
 use DB;
 use App\Http\Controllers\Fachada;
+use App\Models\DocumentoInstitucional;
 
 class ReportesController extends Controller
 {
@@ -18,5 +19,15 @@ class ReportesController extends Controller
 			where c.id = ?", [Fachada::buscarEstudiante()->carrera_id]);
 
     	return view('busquedas.materiales')->with('materiales',$materiales);
+    }
+
+    public function buscarDocumentos()
+    {
+        $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')->get();
+
+        //dd( $documentoInstitucionals);
+
+        return view('busquedas.documentos')
+            ->with('documentoInstitucionals', $documentoInstitucionals);
     }
 }

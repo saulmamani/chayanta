@@ -1,4 +1,10 @@
 @if(Auth::user()->rol == "Administrador" || Auth::user()->rol == "Secretaria")
+	
+	@if(Auth::user()->rol == "Administrador")
+<li class="{{ Request::is('institucionales*') ? 'active' : '' }}">
+    <a href="{!! url('institucionales') !!}"><i class="fa fa-edit"></i><span>Buscar Documento</span></a>
+</li>
+	@endif
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
 </li>

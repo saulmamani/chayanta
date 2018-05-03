@@ -39,7 +39,7 @@
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <h4 class="login-box-msg">Ingresar al Sistema</h4>
+        <h4 class="login-box-msg">Sistema Web Dinamico para la Gestion Documental</h4>
 
         <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}

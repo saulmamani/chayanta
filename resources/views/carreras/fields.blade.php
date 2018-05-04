@@ -13,7 +13,7 @@
 <!-- Area Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('area', 'Area:') !!}
-    {!! Form::select('area', ['Humanidades' => 'Humanidades', 'Tecnico' => 'Tecnico'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('area', ['Humanidades' => 'Humanidades', 'Tecnico Medio' => 'Tecnico Medio', 'Tecnico Superior' => 'Tecnico Superior'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Tiempo Field -->

@@ -16,7 +16,7 @@
             <td>{!! $carrera->descripcion !!}</td>
             <td>{!! $carrera->area !!}</td>
             <td>{!! $carrera->tiempo !!}</td>
-            <td><a class="btn-sm btn-success" target="_black" href="{{ $carrera->ruta }}">Descargar</a></td>
+            <td><a class="btn-sm btn-success" target="_black" href="{{ '/planes/'.$carrera->ruta }}">Descargar</a></td>
             <td>
                 {!! Form::open(['route' => ['carreras.destroy', $carrera->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -71,21 +71,45 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Potosi - Bolivia</p>
+            <p class="text-faded mb-5">Norte Potosi - Bolivia</p>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="bg-warning" id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+          
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-book mb-3 sr-icons"></i>
+              <h3 class="mb-3">C.E.A.</h3>
+              <p class="text-muted mb-0">Sistemas Computacionales, Agropecuaria, Confeccion Textil, Artesania, Belleza Integral, Tejido, Industrial</p>
+            </div>
           </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-paper-plane mb-3 sr-icons"></i>
+              <h3 class="mb-3">Objetivos</h3>
+              <p class="text-muted mb-0">Formar jovenes y adultos capaces de generar desarrollo socio economico en le distrito, previo equipamiento de sus recursos tecnicos y la capacitacion. Para un buen desempeño en el mercado</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-university mb-3 sr-icons"></i>
+              <h3 class="mb-3">Mision</h3>
+              <p class="text-muted mb-0">Promover la calidad educativa a traves de la convertura e implementacion de la educacion tecnica alternativa de personas jovenes y adultas</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-eye mb-3 sr-icons"></i>
+              <h3 class="mb-3">Vision</h3>
+              <p class="text-muted mb-0">Implementar el nivel de educacion de personas jovenes y adultas como parte integral y complementaria, y potencialidades que permitan satisfacer sus espectativas de la vida productiva</p>              
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -102,23 +126,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Titulo 1</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">22/12/2018</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Titulo 2</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">11/11/2018</span>
-            </li>
-          </ul>
+
+          <div id="comunicados_lista"></div>
 
           </div>
         </div>
@@ -136,41 +145,10 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-              <hr>
-              <p><a class="btn btn-lg btn-info" href="">Plan de Estudios</a></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-              <hr>
-              <p><a class="btn btn-lg btn-info" href="">Plan de Estudios</a></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-              <hr>
-              <p><a class="btn btn-lg btn-info" href="">Plan de Estudios</a></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-              <hr>
-              <p><a class="btn btn-lg btn-info" href="">Plan de Estudios</a></p>              
-            </div>
+          <div class="col-lg-12 text-center">
+            
+            <div id="carreras_lista"></div>
+        
           </div>
         </div>
       </div>
@@ -181,136 +159,159 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Actividades y Eventos</h2>
+            <p>Direccion de Bienestar Social</p>
             <hr class="my-4">
           </div>
         </div>
       </div>
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-2 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/7.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/7.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/8.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/8.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/9.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/9.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/10.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/10.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/11.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/11.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/12.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/12.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/13.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/13.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/14.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/14.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/15.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/15.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/16.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/16.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/17.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/17.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/18.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/18.jpg" alt="">
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
-      </div>
-    </section>
 
-    <section id="contact">
+    <section id="contact" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <h2 class="section-heading">Contactanos</h2>
             <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <p class="mb-5">La direccion del Centro de Educacion Aternativa "Chayanta", como un apoyo mas a los jovenes y adulto, te invita a ser parte de esta grandiosa institucion!</p>
           </div>
         </div>
         <div class="row">
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-map-marker fa-3x mb-3 sr-contact"></i>
+            <p>Calle Potosi entre Junin y Avaroa (Norte Potosi - Chayanta)</p>
+          </div>
           <div class="col-lg-4 ml-auto text-center">
             <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
+            <p>71825198</p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+              <a href="mailto:cris41282@gmail.com">cris41282@gmail.com</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-whatsapp fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="https://api.whatsapp.com/send?phone=59176137269" target="_black">71825198</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-facebook fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="https://www.facebook.com/smamanimamani" target="_back">Facebook</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-twitter fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="https://twitter.com/kanito777" target="_black">twitter</a>
             </p>
           </div>
         </div>
       </div>
     </section>
+
+
+    <!-- Main Footer -->
+    <footer class="main-footer" style="max-height: 100px;text-align: center">
+        <strong>Copyright © <a href="https://github.com/saulmamani" target="_black">Saul Mamani M.</a>.</strong> Todos los derechos reservados.
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -325,5 +326,12 @@
     <script src="{!! asset('js/creative.min.js') !!}"></script>
 
   </body>
+
+  <script type="text/javascript">  
+    $(document).ready(function() {
+        $("#comunicados_lista").load("{{ url('comunicados_lista') }}");
+        $("#carreras_lista").load("{{ url('carreras_lista') }}");
+    });
+  </script>
 
 </html>

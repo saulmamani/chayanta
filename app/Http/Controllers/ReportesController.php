@@ -7,6 +7,8 @@ use App\Models\DocumentoBibliografico;
 use DB;
 use App\Http\Controllers\Fachada;
 use App\Models\DocumentoInstitucional;
+use App\Models\Comunicado;
+use App\Models\Carrera;
 
 class ReportesController extends Controller
 {
@@ -29,5 +31,17 @@ class ReportesController extends Controller
 
         return view('busquedas.documentos')
             ->with('documentoInstitucionals', $documentoInstitucionals);
+    }
+
+    public function listarComunicados()
+    {
+        $comunicados = Comunicado::Where('estado', '=', 'Alta')->get();
+        return view('busquedas.comunicados_lista')->with('comunicados',$comunicados);
+    }
+
+    public function listarCarreras()
+    {
+        $comunicados = Carrera::All();
+        return view('busquedas.carreras_lista')->with('carreras',$comunicados);
     }
 }

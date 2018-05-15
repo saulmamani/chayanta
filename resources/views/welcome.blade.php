@@ -77,7 +77,7 @@
       </div>
     </header>
 
-    <section class="bg-warning" id="about">
+    <section style="background-image: linear-gradient(0deg, rgba(55, 125, 255, 0.05) 0%, transparent 100%)" id="about">
       <div class="container">
         <div class="row">
           

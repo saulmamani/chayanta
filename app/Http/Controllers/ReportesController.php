@@ -44,4 +44,21 @@ class ReportesController extends Controller
         $comunicados = Carrera::All();
         return view('busquedas.carreras_lista')->with('carreras',$comunicados);
     }
+
+    public function reportes()
+    {
+        $documentos = DB::select("select 'Documentos' descripcion, count(d.id) cantidad
+from documento_institucionals d
+union all
+select 'Materiales Bibligraficos' descripcion, count(d.id) cantidad
+from documento_bibliograficos d");
+
+        $materiales = DB::select("select concat(f.nombre,' ',f.apellido), count(d.id)
+from 
+documento_bibliograficos d inner join
+facilitadors f on d.facilitadors_id = f.id
+group by d.facilitadors_id");
+
+        return view('reportes.index')->with(['documentos'=>$documentos, 'materiales'=>$materiales]);
+    }
 }

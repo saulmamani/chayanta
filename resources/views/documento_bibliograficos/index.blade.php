@@ -10,8 +10,6 @@
     <div class="content">
         <div class="clearfix"></div>
 
-        <a id="rostro" href="{{ asset('rostro1.jpg') }}" alt="" data-lightbox="example-1">imagen</a>
-
         @include('flash::message')
 
         <div class="clearfix"></div>

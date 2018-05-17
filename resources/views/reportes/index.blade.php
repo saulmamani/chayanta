@@ -12,7 +12,7 @@
 	<div class="box box-primary">
         <div class="box-body">
 
-<div id="exTab2" class="container">	
+<div id="exTab2">	
 	<ul class="nav nav-tabs">
 		<li class="active"><a  href="#1" data-toggle="tab">Documentos</a></li>
 		<li><a href="#2" data-toggle="tab">Por Facilitador</a></li>
@@ -20,10 +20,10 @@
 
 	<div class="tab-content ">
 		<div class="tab-pane active" id="1">
-        	<h3>Reporte PIE</h3>
+        	@include('reportes.reporte_pie')
 		</div>
 		<div class="tab-pane" id="2">
-        	<h3>Reporte de Barras</h3>
+        	<div id="container_barra" style="width:100%; height:400px;"></div>
 		</div>
 	</div>
 </div>

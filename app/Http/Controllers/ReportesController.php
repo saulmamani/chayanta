@@ -53,7 +53,7 @@ union all
 select 'Materiales Bibligraficos' descripcion, count(d.id) cantidad
 from documento_bibliograficos d");
 
-        $materiales = DB::select("select concat(f.nombre,' ',f.apellido), count(d.id)
+        $materiales = DB::select("select concat(f.nombre,' ',f.apellido) nombre, count(d.id) cantidad
 from 
 documento_bibliograficos d inner join
 facilitadors f on d.facilitadors_id = f.id

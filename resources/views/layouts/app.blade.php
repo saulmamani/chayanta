@@ -114,6 +114,8 @@
 
 @include('layouts.datatables_js')
 
+<!-- Hight charts -->
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
 
 @yield('scripts')
 </body>

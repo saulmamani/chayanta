@@ -13,7 +13,7 @@
 <!-- URL Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('urlPdf', 'Cargar Documento: (*.pdf)') !!}
-    {!! Form::file('urlPdf', null, ['class' => 'form-control','required' => 'required']) !!}
+    {!! Form::file('urlPdf', null, ['class' => 'form-control','required' => 'required', 'accept'=>'.pdf']) !!}
 
 </div>
 

@@ -66,7 +66,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Centro de Educacion Alternativa "Chayanta"</strong>
+              <strong>Centro de Educación Alternativa "Chayanta"</strong>
             </h1>
             <hr>
           </div>
@@ -85,28 +85,28 @@
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-book mb-3 sr-icons"></i>
               <h3 class="mb-3">C.E.A.</h3>
-              <p class="text-muted mb-0">Sistemas Computacionales, Agropecuaria, Confeccion Textil, Artesania, Belleza Integral, Tejido, Industrial</p>
+              <p class="text-muted mb-0">Sistemas Computacionales, Agropecuaria, Confección Textil, Artesania, Belleza Integral, Tejido, Industrial</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-paper-plane mb-3 sr-icons"></i>
               <h3 class="mb-3">Objetivos</h3>
-              <p class="text-muted mb-0">Formar jovenes y adultos capaces de generar desarrollo socio economico en le distrito, previo equipamiento de sus recursos tecnicos y la capacitacion. Para un buen desempeño en el mercado</p>
+              <p class="text-muted mb-0">Formar jóvenes y adultos capaces de generar desarrollo socio económico en le distrito, previo equipamiento de sus recursos tecnicos y la capacitacioón. Para un buen desempeño en el mercado</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-university mb-3 sr-icons"></i>
-              <h3 class="mb-3">Mision</h3>
-              <p class="text-muted mb-0">Promover la calidad educativa a traves de la convertura e implementacion de la educacion tecnica alternativa de personas jovenes y adultas</p>
+              <h3 class="mb-3">Misión</h3>
+              <p class="text-muted mb-0">Promover la calidad educativa a través de la convertura e implementación de la educación técnica alternativa de personas jóvenes y adultas</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-eye mb-3 sr-icons"></i>
-              <h3 class="mb-3">Vision</h3>
-              <p class="text-muted mb-0">Implementar el nivel de educacion de personas jovenes y adultas como parte integral y complementaria, y potencialidades que permitan satisfacer sus espectativas de la vida productiva</p>              
+              <h3 class="mb-3">Visión</h3>
+              <p class="text-muted mb-0">Implementar el nivel de educación de personas jóvenes y adultas como parte integral y complementaria, y potencialidades que permitan satisfacer sus espectativas de la vida productiva</p>              
             </div>
           </div>
 
@@ -159,7 +159,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Actividades y Eventos</h2>
-            <p>Direccion de Bienestar Social</p>
+            <p>Dirección de Bienestar Social</p>
             <hr class="my-4">
           </div>
         </div>
@@ -267,7 +267,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Contactanos</h2>
             <hr class="my-4">
-            <p class="mb-5">La direccion del Centro de Educacion Aternativa "Chayanta", como un apoyo mas a los jovenes y adulto, te invita a ser parte de esta grandiosa institucion!</p>
+            <p class="mb-5">La dirección del Centro de Educación Aternativa "Chayanta", como un apoyo mas a los jovenes y adulto, te invita a ser parte de esta grandiosa institucion!</p>
           </div>
         </div>
         <div class="row">

@@ -30,7 +30,8 @@ class Carrera extends Model
         'descripcion',
         'area',
         'tiempo',
-        'ruta'
+        'ruta',
+        'users_id'
     ];
 
     /**

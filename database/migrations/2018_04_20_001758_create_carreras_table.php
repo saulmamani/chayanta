@@ -20,8 +20,10 @@ class CreateCarrerasTable extends Migration
             $table->string('area',  50);
             $table->integer('tiempo');
             $table->string('ruta');
+            $table->integer('users_id')->unsigned()->default(0);
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 

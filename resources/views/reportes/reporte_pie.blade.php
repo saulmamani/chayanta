@@ -11,7 +11,7 @@ var myChart = Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Estadistico de Documentos y Material Bibliografico'
+        text: 'Estadístico de Documentos y Material Bibliográfico'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -73,7 +73,7 @@ var myChart_2 = Highcharts.chart('container_barra', {
         },
         series: [
             {
-                name: 'Material bibligrafico subido',
+                name: 'Material bibligráfico subido',
                 data: [
                     @foreach($materiales as $fc)
                         {{ $fc->cantidad }},

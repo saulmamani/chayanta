@@ -31,7 +31,7 @@
 <!-- Fechanacimiento Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fechaNacimiento', 'Fecha Nacimiento:') !!}
-    {!! Form::date('fechaNacimiento', null, ['class' => 'form-control']) !!}
+    {!! Form::date("fechaNacimiento", null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Lugarnacimiento Field -->

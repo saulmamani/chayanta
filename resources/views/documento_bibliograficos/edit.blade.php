@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Documento Bibliografico
+            Material Bibliografico
         </h1>
    </section>
    <div class="content">

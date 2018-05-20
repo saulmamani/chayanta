@@ -13,7 +13,7 @@
     <tbody>
     @foreach($documentoBibliograficos as $documentoBibliografico)
         <tr>
-            <td align="center">{!! $documentoBibliografico->fecha !!}</td>
+            <td align="center">{!! $documentoBibliografico->fecha->format('d/m/Y') !!}</td>
             <td>{!! $documentoBibliografico->nombre !!}</td>
             <td>{!! $documentoBibliografico->descripcion !!}</td>
             <td>{!! $documentoBibliografico->facilitador->nombre . ' '. $documentoBibliografico->facilitador->apellido !!}</td>

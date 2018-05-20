@@ -31,7 +31,7 @@
 <!-- Fechanacimiento Field -->
 <div class="form-group">
     {!! Form::label('fechaNacimiento', 'Fecha de Nacimiento:') !!}
-    <p>{!! $facilitador->fechaNacimiento !!}</p>
+    <p>{!! $facilitador->fechaNacimiento->format('d/m/Y') !!}</p>
 </div>
 
 <!-- Lugarnacimiento Field -->

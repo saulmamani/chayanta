@@ -32,7 +32,7 @@
     <tbody>
     @foreach($materiales as $row)
         <tr>
-            <td align="center">{!! $row->fecha !!}</td>
+            <td align="center">{!! $row->fecha->format('d/m/Y') !!}</td>
             <td>{!! $row->nombre !!}</td>
             <td>{!! $row->descripcion !!}</td>
             <td>

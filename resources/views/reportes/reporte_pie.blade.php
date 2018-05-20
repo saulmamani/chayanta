@@ -84,5 +84,47 @@ var myChart_2 = Highcharts.chart('container_barra', {
     });
 
 });
+
+var myChart_genero = Highcharts.chart('container_genero', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Estadístico de estudiantes por genero'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: 
+        [
+        @foreach($generos as $row)
+        {
+            name: '{{ $row->genero.'es' }}',
+            y: {{ $row->cantidad }},
+        }, 
+        @endforeach
+        ]
+    }]
+});
+
 </script>
 @endsection

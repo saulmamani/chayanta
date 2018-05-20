@@ -59,6 +59,11 @@ documento_bibliograficos d inner join
 facilitadors f on d.facilitadors_id = f.id
 group by d.facilitadors_id");
 
-        return view('reportes.index')->with(['documentos'=>$documentos, 'materiales'=>$materiales]);
+        $generos = DB::select("select genero, count(genero) as cantidad
+from estudiantes
+where deleted_at is null
+group by genero");
+
+        return view('reportes.index')->with(['documentos'=>$documentos, 'materiales'=>$materiales, 'generos' => $generos]);
     }
 }

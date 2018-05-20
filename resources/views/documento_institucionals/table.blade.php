@@ -13,7 +13,7 @@
     <tbody>
     @foreach($documentoInstitucionals as $documentoInstitucional)
         <tr>
-            <td>{!! $documentoInstitucional->fecha !!}</td>
+            <td>{!! $documentoInstitucional->fecha->format('d/m/Y') !!}</td>
             <td>{!! $documentoInstitucional->nombre !!}</td>
             <td>{!! $documentoInstitucional->descripcion !!}</td>
             <td>{!! $documentoInstitucional->estado !!}</td>

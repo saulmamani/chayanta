@@ -1,7 +1,7 @@
 <!-- Fecha Field -->
 <div class="form-group">
     {!! Form::label('fecha', 'Fecha:') !!}
-    <p>{!! $documentoInstitucional->fecha !!}</p>
+    <p>{!! $documentoInstitucional->fecha->format('d/m/Y') !!}</p>
 </div>
 
 <!-- Nombre Field -->

@@ -21,8 +21,8 @@
             <td>{!! $facilitador->apellido !!}</td>
             <td>{!! $facilitador->genero !!}</td>
             <td>{!! $facilitador->celular !!}</td>
-            <td>{!! $facilitador->profesion !!}</td>
-            <td>{{  $facilitador->carrera->nombre }}</td>
+            <td>{!! $facilitador->Profesion !!}</td>
+            <td>{{  $facilitador->Carrera->nombre }}</td>
             <td>
                 {!! Form::open(['route' => ['facilitadors.destroy', $facilitador->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

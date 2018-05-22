@@ -52,7 +52,7 @@ class DocumentoInstitucionalController extends AppBaseController
 
     private function cargarArchivo(Request $request)
     {
-        //cargando el documento
+        //TODO controlar el tamano del archivo a 5 megas maximo
         $pdf = $request->file('urlPdf');
         if(is_null($pdf))
         {

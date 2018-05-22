@@ -56,7 +56,7 @@ class CarreraController extends AppBaseController
      */
     public function store(CreateCarreraRequest $request)
     {
-        //subir planes de estudio
+        //TODO controlar el tamano a 2 megas maximo
         $img = $request->file('rutaPdf');        
         $nombreArchivo = time().'_'.$img->getClientOriginalName();
         Storage::disk('planesPdf')->put($nombreArchivo, 
@@ -135,7 +135,7 @@ class CarreraController extends AppBaseController
         //modificando archivo plan de estudios
         if (isset($datos['rutaPdf']))
         {
-           //cargando archivo al servidor
+            //TODO controlar el tamano a 2 megas maximo            
             $img = $request->file('rutaPdf');
             $nombreArchivo = time().'_'.$img->getClientOriginalName();
             Storage::disk('planesPdf')->put($nombreArchivo, 

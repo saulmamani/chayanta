@@ -109,8 +109,8 @@ class UserController extends Controller
             return redirect(route('users.index'));
         }
 
-        User::destroy($id);
-
+        //User::delete($id);
+        $user->delete($id);
         Flash::success('usuario eliminado successfully.');
 
         return redirect(route('users.index'));

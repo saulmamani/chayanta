@@ -17,6 +17,6 @@
             <div class="box-body">
                     @include('users.table')
             </div>
-        </div>>
+        </div>
     </div>
 @endsection

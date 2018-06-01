@@ -13,10 +13,7 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
-
-    <!-- fancibox -->
-    <link rel="stylesheet" href="{!! asset('lightbox/css/lightbox.css') !!}">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">  
 
     @include('layouts.datatables_css')
 
@@ -109,13 +106,14 @@
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
-<!--lightbox-->
-<script type="text/javascript" src="{!! asset('lightbox/js/lightbox.js') !!}" async></script>
+
 
 @include('layouts.datatables_js')
 
 <!-- Hight charts -->
 <script src="https://code.highcharts.com/highcharts.src.js"></script>
+<!-- Editor de texto -->
+<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 
 @yield('scripts')
 </body>

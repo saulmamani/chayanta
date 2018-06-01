@@ -22,3 +22,9 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script type="text/javascript">
+    CKEDITOR.replace( 'contenido' );
+</script>
+@endsection

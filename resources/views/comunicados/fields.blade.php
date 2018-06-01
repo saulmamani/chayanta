@@ -7,7 +7,7 @@
 <!-- Contenido Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('contenido', 'Contenido:') !!}
-    {!! Form::textarea('contenido', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('contenido', null, ['class' => 'form-control ckeditor']) !!}
 </div>
 
 <!-- Estado Field -->

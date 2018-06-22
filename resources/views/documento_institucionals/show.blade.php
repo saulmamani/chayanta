@@ -12,7 +12,7 @@
                 <div class="row" style="padding: 20px">
                     <div class="col">
                     @include('documento_institucionals.show_fields')
-                    <a href="{!! route('documentoInstitucionals.index') !!}" class="btn btn-default">Back</a>
+                    <a href="{!! route('documentoInstitucionals.index') !!}" class="btn btn-default">Volver</a>
                     </div>
                     <hr>
                     <div class="col">

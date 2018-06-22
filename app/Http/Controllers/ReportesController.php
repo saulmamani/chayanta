@@ -23,11 +23,27 @@ class ReportesController extends Controller
     	return view('busquedas.materiales')->with('materiales',$materiales);
     }
 
-    public function buscarDocumentos()
+    public function buscarDocumentos(Request $request)
     {
-        $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')->get();
+        $input = $request->all();
+        $txtBuscar = "%";
+        if(!empty($input))
+        {
+            $txtBuscar = empty($input['txtBuscar']) ? "%" : $input['txtBuscar'];
+            $fecha = $input['dtpFecha'];
+        }
 
-        //dd( $documentoInstitucionals);
+        if(empty($fecha))
+            $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')
+                                        ->where('nombre', 'like', '%'. $txtBuscar .'%')
+                                        ->orWhere('descripcion', 'like', '%'. $txtBuscar .'%')->get();
+        else
+            $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')
+                                        ->whereDate('fecha', '=', $fecha)
+                                        ->where(function($q) use ($txtBuscar){
+                                            $q->where('nombre', 'like', '%'. $txtBuscar .'%')
+                                            ->orWhere('descripcion', 'like', '%'. $txtBuscar .'%');
+                                        })->get();
 
         return view('busquedas.documentos')
             ->with('documentoInstitucionals', $documentoInstitucionals);
@@ -57,7 +73,7 @@ from documento_bibliograficos d");
 from 
 documento_bibliograficos d inner join
 facilitadors f on d.facilitadors_id = f.id
-group by d.facilitadors_id");
+group by d.facilitadors_id, f.nombre, f.apellido");
 
         $generos = DB::select("select genero, count(genero) as cantidad
 from estudiantes

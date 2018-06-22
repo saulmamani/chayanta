@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
 use Storage;
+use App\Models\DocumentoInstitucional;
 
 class DocumentoInstitucionalController extends AppBaseController
 {
@@ -31,10 +32,26 @@ class DocumentoInstitucionalController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->documentoInstitucionalRepository->pushCriteria(new RequestCriteria($request));
-        $documentoInstitucionals = $this->documentoInstitucionalRepository->paginate(10);
+        $input = $request->all();
+        $txtBuscar = "%";
+        if(!empty($input))
+        {
+            $txtBuscar = empty($input['txtBuscar']) ? "%" : $input['txtBuscar'];
+            $fecha = $input['dtpFecha'];
+        }
 
-        //dd( $documentoInstitucionals);
+
+        if(empty($fecha))
+            $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')
+                                        ->where('nombre', 'like', '%'. $txtBuscar .'%')
+                                        ->orWhere('descripcion', 'like', '%'. $txtBuscar .'%')->paginate(10);
+        else
+            $documentoInstitucionals = DocumentoInstitucional::where('estado', '=', 'Alta')
+                                        ->whereDate('fecha', '=', $fecha)
+                                        ->where(function($q) use ($txtBuscar){
+                                            $q->where('nombre', 'like', '%'. $txtBuscar .'%')
+                                            ->orWhere('descripcion', 'like', '%'. $txtBuscar .'%');
+                                        })->paginate(10);
 
         return view('documento_institucionals.index')
             ->with('documentoInstitucionals', $documentoInstitucionals);

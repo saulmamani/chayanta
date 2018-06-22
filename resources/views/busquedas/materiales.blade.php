@@ -32,7 +32,7 @@
     <tbody>
     @foreach($materiales as $row)
         <tr>
-            <td align="center">{!! $row->fecha->format('d/m/Y') !!}</td>
+            <td align="center">{!! $row->fecha !!}</td>
             <td>{!! $row->nombre !!}</td>
             <td>{!! $row->descripcion !!}</td>
             <td>
@@ -56,6 +56,9 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var table = $('#mitabla').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        },
         "columnDefs": [
             { "visible": false, "targets": 3 }
         ],

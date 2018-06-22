@@ -310,7 +310,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer" style="max-height: 100px;text-align: center">
-        <strong>Copyright © <a href="https://github.com/saulmamani" target="_black">Saul Mamani M.</a>.</strong> Todos los derechos reservados.
+        <strong>Copyright © <a href="https://github.com/saulmamani" target="_black">CEA Chayanta.</a>.</strong> Todos los derechos reservados.
     </footer>
 
     <!-- Bootstrap core JavaScript -->

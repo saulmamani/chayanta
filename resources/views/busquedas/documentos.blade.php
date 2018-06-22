@@ -15,6 +15,10 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
+
+@include('busquedas.formulario_buscador')
+
+
 <table class="table table-responsive" id="miTabla">
     <thead>
         <tr>
@@ -51,7 +55,17 @@
 @section('scripts')
 <script type="text/javascript">
 $(document).ready(function() {
+
     var table = $('#miTabla').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching":   false,
+
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        },
+        
         "columnDefs": [
             { "visible": false, "targets": 4 }
         ],
@@ -72,7 +86,8 @@ $(document).ready(function() {
                 }
             } );
         }
-    } );
+    });
+
 });
 </script>
 @endsection

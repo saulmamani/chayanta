@@ -14,7 +14,7 @@ class Fachada extends Controller
     {
         return User::create([
             'name' => $data['nombre'].' '. $data['apellido'],
-            'email' => $data['codigoRUDE'],
+            'email' => $data['ci'],
             'password' => bcrypt($data['codigoRUDE']),
             'cargo' => '',
             'rol' => 'Estudiante',

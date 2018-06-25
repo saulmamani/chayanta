@@ -1,4 +1,4 @@
-<form class="form" role="form" action="{{url('/documentoBibliograficos/')}}">
+<form class="form" role="form" action="{{url('/documentoInstitucionals/')}}">
     <div class="form-group col-sm-6">
         {!! Form::label('txtBuscar', 'Buscar:') !!}
         {!! Form::text('txtBuscar', null, ['class' => 'form-control', 'placeholder'=>'Nombre Documento | Descripcion']) !!}     
